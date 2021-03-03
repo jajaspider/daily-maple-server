@@ -64,6 +64,4 @@ public class LoginController {
     return "redirect:index";
 
   }
-
-
 }

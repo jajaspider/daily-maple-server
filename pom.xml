@@ -57,7 +57,41 @@
         </configuration>
       </plugin>
     </plugins>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+      <resource>
+        <directory>src/main/resources-${env}</directory>
+      </resource>
+    </resources>
+
   </build>
 
+  <profiles>
+    <profile>
+      <id>local</id>
+      <properties>
+        <env>local</env>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>develop</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <env>develop</env>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>release</id>
+      <properties>
+        <env>release</env>
+      </properties>
+    </profile>
+  </profiles>
 
 </project>
